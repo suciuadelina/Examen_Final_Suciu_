@@ -1,0 +1,47 @@
+﻿@page
+@model Examen_Final_Suciu_.Pages.Servicii.EditModel
+
+@{
+    ViewData["Title"] = "Editeaza";
+}
+
+<hr />
+<div class="row" style="font-family: 'Goudy Old Style'; color: blueviolet; font-size: x-large" >
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Salon.ID" />
+            <div class="form-group">
+                <label asp-for="Salon.Serviciu" class="control-label"></label>
+                <input asp-for="Salon.Serviciu" class="form-control" />
+                <span asp-validation-for="Salon.Serviciu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Salon.Pret" class="control-label"></label>
+                <input asp-for="Salon.Pret" class="form-control" />
+                <span asp-validation-for="Salon.Pret" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Salon.Durata" class="control-label"></label>
+                <input asp-for="Salon.Durata" class="form-control" />
+                <span asp-validation-for="Salon.Durata" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Salon.Hairstylist" class="control-label"></label>
+                <input asp-for="Salon.Hairstylist" class="form-control" />
+                <span asp-validation-for="Salon.Hairstylist" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salveaza" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Inapoi la lista de servicii</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

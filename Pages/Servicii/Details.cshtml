@@ -1,0 +1,41 @@
+﻿@page
+@model Examen_Final_Suciu_.Pages.Servicii.DetailsModel
+
+@{
+    ViewData["Title"] = "Detalii";
+}
+
+
+<div style="font-family: 'Goudy Old Style'; color: blueviolet; font-size: x-large" >
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Salon.Serviciu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Salon.Serviciu)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Salon.Pret)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Salon.Pret)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Salon.Durata)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Salon.Durata)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Salon.Hairstylist)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Salon.Hairstylist)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Salon.ID">Editeaza</a> |
+    <a asp-page="./Index">Inapoi la lista de servicii</a>
+</div>

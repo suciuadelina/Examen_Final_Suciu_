@@ -1,0 +1,53 @@
+﻿@page
+@model Examen_Final_Suciu_.Pages.Servicii.IndexModel
+
+@{
+    ViewData["Title"] = "Lista serviciilor";
+}
+
+
+<p>
+    <a asp-page="Create" style="font-family: 'Goudy Old Style'; color: blueviolet; font-size: x-large">Adauga un nou serviciu</a>
+</p>
+<table class="table" style="font-family: 'Goudy Old Style'; color: blueviolet; font-size: x-large ">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Salon[0].Serviciu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salon[0].Pret)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salon[0].Durata)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salon[0].Hairstylist)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Salon) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Serviciu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pret)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Durata)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hairstylist)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Editeaza serviciul</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Detalii serviciu</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Sterge serviciul</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
